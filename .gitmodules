@@ -1,0 +1,3 @@
+[submodule "slickgrid"]
+	path = slickgrid
+	url = https://github.com/6pac/SlickGrid.git
