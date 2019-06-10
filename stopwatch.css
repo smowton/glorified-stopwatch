@@ -1,3 +1,7 @@
+body {
+  font-family: sans-serif;
+}
+
 #myGrid {
   background: white;
   outline: 0;
@@ -14,3 +18,6 @@ input.editor-text {
   padding: 0;
 }
 
+.competitorId {
+  font-size: 18pt;
+}
