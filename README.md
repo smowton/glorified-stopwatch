@@ -29,6 +29,10 @@ No internet connection is needed to run the tool.
 
 Please open an [issue](https://github.com/smowton/glorified-stopwatch/issues) if you find any bugs or can think of any improvements. We also welcome PRs for the latter! 
 
+## Why isn't this in Excel? 
+
+We didn't have an Microsoft Office license and didn't fancy buying one! This way is also operating system agnostic as you just need an internet browser to run it. 
+
 ## Hacking about / contributing
 
 Submodules are unfortunately involved in downloading the code:
