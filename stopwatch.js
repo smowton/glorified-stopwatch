@@ -52,6 +52,8 @@ $(function () {
       recordTime();
     }
   });
+
+  competitorForm.competitorId.focus();
 })
 
 var freshId = 0;
