@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>Glorified Stopwatch</title>
+  <link rel="stylesheet" href="slickgrid/slick.grid.css" type="text/css"/>
+  <link rel="stylesheet" href="slickgrid/css/smoothness/jquery-ui-1.11.3.custom.css" type="text/css"/>
+  <link rel="stylesheet" href="stopwatch.css" type="text/css"/>
+  <style>
+    .cell-competitor {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div style="position:relative">
+  <div style="width:600px;">
+    <div id="myGrid" style="width:100%;height:500px;"></div>
+  </div>
+</div>
+<p>
+  <form name="competitorForm" autocomplete="off">
+    <input name="competitorId"/>
+    <button onclick="recordTime()" type="button">Record Time</button>
+    <button onclick="recordRetired()" type="button">Mark Retired</button>            
+    <button onclick="recordDNS()" type="button">Mark DNS</button>
+    <button onclick="recordDisqualified()" type="button">Mark Disqualified</button>
+  </form>
+</p>
+<p>
+  <form name="downloadForm">
+    <button onclick="downloadCSV()" type="button">Save as spreadsheet</button>
+  </form>
+</p>
+
+<script src="slickgrid/lib/firebugx.js"></script>
+
+<script src="slickgrid/lib/jquery-1.11.2.min.js"></script>
+<script src="slickgrid/lib/jquery-ui-1.11.3.min.js"></script>
+<script src="slickgrid/lib/jquery.event.drag-2.3.0.js"></script>
+
+<script src="slickgrid/slick.core.js"></script>
+<script src="slickgrid/plugins/slick.cellrangedecorator.js"></script>
+<script src="slickgrid/plugins/slick.cellrangeselector.js"></script>
+<script src="slickgrid/plugins/slick.cellselectionmodel.js"></script>
+<script src="slickgrid/slick.formatters.js"></script>
+<script src="slickgrid/slick.editors.js"></script>
+<script src="slickgrid/slick.grid.js"></script>
+<script src="slickgrid/slick.dataview.js"></script>
+
+<script src="download/download2.js"></script>
+
+<script src="stopwatch.js"></script>
+
+</body>
+</html>
