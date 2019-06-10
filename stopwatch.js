@@ -29,7 +29,6 @@ var columns = [
 ];
 var options = {
   editable: true,
-  enableAddRow: true,
   enableCellNavigation: true,
   asyncEditorLoading: false,
   autoEdit: false
