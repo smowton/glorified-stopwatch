@@ -22,16 +22,26 @@ dataView.onRowsChanged.subscribe(function (e, args) {
   grid.render();
 });
 
+// Based on a StackOverflow suggestion for per-row delete buttons:
+// https://stackoverflow.com/questions/9784400/how-do-i-create-a-delete-button-on-every-row-using-the-slickgrid-plugin
+function buttonFormatter(row, cell, value, columnDef, dataContext) {
+  var button = "<button class='delButton' style='font-size: 8pt' id='"+ dataContext.id +"'>Delete</button>";
+  // the id is so that you can identify the row when the particular button is clicked
+  return button;
+}
+
 var columns = [
   {id: "competitor", name: "Competitor", field: "competitor", width: 120, cssClass: "cell-competitor", editor: Slick.Editors.Text},
   {id: "time", name: "Time", field: "time", width: 120, editor: Slick.Editors.Text},
   {id: "notes", name: "Notes", field: "notes", width: 200, editor: Slick.Editors.Text},
+  {id: "delete", name: "Delete", field: "del", width: 100, formatter: buttonFormatter}
 ];
 var options = {
   editable: true,
   enableCellNavigation: true,
   asyncEditorLoading: false,
-  autoEdit: false
+  autoEdit: false,
+  rowHeight: 28
 };
 
 $(function () {
@@ -56,6 +66,14 @@ $(function () {
       event.preventDefault();
       recordTime();
     }
+  });
+
+  $(document).on('click', '.delButton', function() {
+    var me = $(this), id = me.attr('id');
+    if(!confirm("Really delete competitor '" + dataView.getItemById(id).competitor + "'?"))
+      return;
+    dataView.deleteItem(id);
+    grid.invalidate();
   });
 
   competitorForm.competitorId.focus();
