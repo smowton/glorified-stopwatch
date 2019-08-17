@@ -38,5 +38,6 @@ We didn't have an Microsoft Office license and didn't fancy buying one! This way
 Submodules are unfortunately involved in downloading the code:
 ```
 git clone https://github.com/smowton/glorified-stopwatch.git
-git submodule update --init
+cd glorified-stopwatch
+./setup-submodules.sh
 ````

@@ -1,0 +1,28 @@
+diff --git a/slick.grid.js b/slick.grid.js
+index c99f09c..a0c5f1a 100644
+--- a/slick.grid.js
++++ b/slick.grid.js
+@@ -4408,6 +4408,7 @@ if (typeof Slick === "undefined") {
+       // if so, do not steal the focus from the editor
+       if (getEditorLock().commitCurrentEdit()) {
+         setFocus();
++        trigger(self.onFocusSetAfterEdit, {})
+         if (options.autoEdit) {
+           navigateDown();
+         }
+@@ -4417,6 +4418,7 @@ if (typeof Slick === "undefined") {
+     function cancelEditAndSetFocus() {
+       if (getEditorLock().cancelCurrentEdit()) {
+         setFocus();
++        trigger(self.onFocusSetAfterEdit, {})
+       }
+     }
+ 
+@@ -5218,6 +5220,7 @@ if (typeof Slick === "undefined") {
+       "onCellCssStylesChanged": new Slick.Event(),
+       "onAutosizeColumns": new Slick.Event(),
+       "onRendered": new Slick.Event(),
++      "onFocusSetAfterEdit": new Slick.Event(),
+ 
+       // Methods
+       "registerPlugin": registerPlugin,

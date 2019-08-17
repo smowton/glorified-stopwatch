@@ -46,6 +46,11 @@ $(function () {
     grid.render();
   });
 
+  grid.onFocusSetAfterEdit.subscribe(function(e, args) {
+    // Reset focus to data entry after any editing operation:
+    competitorForm.competitorId.focus();
+  });
+
   competitorForm.competitorId.addEventListener("keypress", function(event) {
     if (event.which == '13') {
       event.preventDefault();
